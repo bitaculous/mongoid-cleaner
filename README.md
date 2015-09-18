@@ -20,7 +20,7 @@ Installation
 1. Add Mongoid Cleaner to your Gemfile:
 
     ```ruby
-    gem 'mongoid-cleaner', github: 'bitcoveries/mongoid-cleaner'
+    gem 'mongoid-cleaner', github: 'bitaculous/mongoid-cleaner'
     ```
 
 2. Run `bundle` to install all dependencies with [Bundler]
