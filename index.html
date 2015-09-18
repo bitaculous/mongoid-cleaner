@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Mongoid-cleaner by bitaculous</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Mongoid-cleaner</h1>
+        <p>Cleaner for Mongoid with drop and truncation strategy.</p>
+
+        <p class="view"><a href="https://github.com/bitaculous/mongoid-cleaner">View the Project on GitHub <small>bitaculous/mongoid-cleaner</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/bitaculous/mongoid-cleaner/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/bitaculous/mongoid-cleaner/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/bitaculous/mongoid-cleaner">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li>
+<a href="https://www.mongodb.org" title="A cross-platform document-oriented database.">MongoDB</a> 3.x</li>
+<li>
+<a href="http://mongoid.org" title="Ruby ODM framework for MongoDB">Mongoid</a> 5.x</li>
+</ul>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<ol>
+<li>
+<p>Add Mongoid Cleaner to your Gemfile:</p>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">gem</span> <span class="pl-s"><span class="pl-pds">'</span>mongoid-cleaner<span class="pl-pds">'</span></span>, <span class="pl-c1">github:</span> <span class="pl-s"><span class="pl-pds">'</span>bitcoveries/mongoid-cleaner<span class="pl-pds">'</span></span></pre></div>
+</li>
+<li><p>Run <code>bundle</code> to install all dependencies with <a href="http://bundler.io" title="The best way to manage a Ruby application's gems">Bundler</a></p></li>
+</ol>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-c1">Mongoid</span>::<span class="pl-c1">Cleaner</span>.strategy <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>drop<span class="pl-pds">'</span></span>, { <span class="pl-c1">only:</span> <span class="pl-s"><span class="pl-pds">%w(</span>users<span class="pl-pds">)</span></span> }
+<span class="pl-c1">Mongoid</span>::<span class="pl-c1">Cleaner</span>.clean
+
+<span class="pl-c1">Mongoid</span>::<span class="pl-c1">Cleaner</span>.strategy <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>truncate<span class="pl-pds">'</span></span>, { <span class="pl-c1">except:</span> <span class="pl-s"><span class="pl-pds">%w(</span>users<span class="pl-pds">)</span></span> }
+<span class="pl-c1">Mongoid</span>::<span class="pl-c1">Cleaner</span>.clean</pre></div>
+
+<p>With <a href="http://rspec.info" title="Behaviour Driven Development for Ruby">Rspec</a>:</p>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-c1">RSpec</span>.configure <span class="pl-k">do </span>|<span class="pl-smi">config</span>|
+  config.before(<span class="pl-c1">:suite</span>) <span class="pl-k">do</span>
+    <span class="pl-c1">Mongoid</span>::<span class="pl-c1">Cleaner</span>.strategy <span class="pl-k">=</span> <span class="pl-c1">:drop</span>
+  <span class="pl-k">end</span>
+
+  config.around(<span class="pl-c1">:each</span>) <span class="pl-k">do </span>|<span class="pl-smi">example</span>|
+    <span class="pl-c1">Mongoid</span>::<span class="pl-c1">Cleaner</span>.cleaning <span class="pl-k">do</span>
+      example.run
+    <span class="pl-k">end</span>
+  <span class="pl-k">end</span>
+<span class="pl-k">end</span></pre></div>
+
+<h2>
+<a id="development" class="anchor" href="#development" aria-hidden="true"><span class="octicon octicon-link"></span></a>Development</h2>
+
+<h3>
+<a id="run-specs-with-rspec" class="anchor" href="#run-specs-with-rspec" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run specs with <a href="http://rspec.info" title="Behaviour Driven Development for Ruby">RSpec</a>
+</h3>
+
+<p>Run <code>rspec</code>.</p>
+
+<p>or via <a href="http://guardgem.org" title="A command line tool to easily handle events on file system modifications.">Guard</a>:</p>
+
+<pre><code>$ guard -g spec
+</code></pre>
+
+<h3>
+<a id="see-test-coverage" class="anchor" href="#see-test-coverage" aria-hidden="true"><span class="octicon octicon-link"></span></a>See Test Coverage</h3>
+
+<p>Run <code>COVERAGE=true rspec</code>.</p>
+
+<h3>
+<a id="run-rubocop" class="anchor" href="#run-rubocop" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run <a href="https://github.com/bbatsov/rubocop" title="A Ruby static code analyzer, based on the community Ruby style guide.">RuboCop</a>
+</h3>
+
+<p>Run <code>rubocop</code>.</p>
+
+<p>To run all specs and RuboCop altogether, run <code>rake</code>.</p>
+
+<h2>
+<a id="code-status" class="anchor" href="#code-status" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code Status</h2>
+
+<p><a href="https://travis-ci.org/bitaculous/mongoid-cleaner" title="Mongoid Cleaner at Travis CI"><img src="https://img.shields.io/travis/bitaculous/mongoid-cleaner.svg?style=flat" alt="Travis CI Status" title="Travis CI Status"></a>
+<a href="https://codeclimate.com/github/bitaculous/mongoid-cleaner" title="Mongoid Cleaner at Code Climate"><img src="https://img.shields.io/codeclimate/github/bitaculous/mongoid-cleaner.svg?style=flat" alt="Code Climate Status" title="Code Climate Status"></a>
+<a href="https://codeclimate.com/github/bitaculous/mongoid-cleaner" title="Test Coverage (Code Climate)"><img src="https://img.shields.io/codeclimate/coverage/github/bitaculous/mongoid-cleaner.svg?style=flat" alt="Test Coverage Status" title="Test Coverage Status"></a>
+<a href="https://gemnasium.com/bitaculous/mongoid-cleaner" title="Mongoid Cleaner at Gemnasium"><img src="https://img.shields.io/gemnasium/bitaculous/mongoid-cleaner.svg?style=flat" alt="Gemnasium Status" title="Gemnasium Status"></a></p>
+
+<h2>
+<a id="bug-reports" class="anchor" href="#bug-reports" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bug Reports</h2>
+
+<p>Github Issues are used for managing bug reports and feature requests. If you run into issues, please search the issues
+and submit new problems <a href="https://github.com/bitaculous/mongoid-cleaner/issues" title="Github Issues">here</a>.</p>
+
+<h2>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credits</h2>
+
+<p>All credits goes to team of <a href="http://www.td-berlin.com" title="trommsdorff + drüner, innovation + marketing consultants GmbH">trommsdorff + drüner, innovation + marketing consultants GmbH</a> for <a href="https://github.com/td-berlin/mongoid_cleaner" title="MongoidCleaner with drop and truncation strategy">MongoidCleaner</a>,
+which this Gem is based on.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Mongoid Cleaner is released under the <a href="http://opensource.org/licenses/MIT" title="The MIT License (MIT)">MIT License (MIT)</a>, see <a href="https://raw.githubusercontent.com/bitaculous/mongoid-cleaner/master/LICENSE" title="License">LICENSE</a>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/bitaculous">bitaculous</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
