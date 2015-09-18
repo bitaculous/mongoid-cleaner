@@ -6,7 +6,13 @@
 [![Test Coverage Status][Test Coverage Status]][Test Coverage]
 [![Gemnasium Status][Gemnasium Status]][Gemnasium]
 
-**Cleaner for Mongoid with drop and truncation strategy.**
+**Cleaner for [Mongoid] with drop and truncation strategy.**
+
+Requirements
+------------
+
+* [MongoDB] 3.x
+* [Mongoid] 5.x
 
 Installation
 ------------
@@ -95,6 +101,8 @@ Mongoid Cleaner is released under the [MIT License (MIT)], see [LICENSE].
 [here]: https://github.com/bitaculous/mongoid-cleaner/issues "Github Issues"
 [LICENSE]: https://raw.githubusercontent.com/bitaculous/mongoid-cleaner/master/LICENSE "License"
 [MIT License (MIT)]: http://opensource.org/licenses/MIT "The MIT License (MIT)"
+[MongoDB]: https://www.mongodb.org "A cross-platform document-oriented database."
+[Mongoid]: http://mongoid.org "Ruby ODM framework for MongoDB"
 [Mongoid Cleaner]: https://bitaculous.github.io/mongoid-cleaner/ "Cleaner for Mongoid with drop and truncation strategy."
 [MongoidCleaner]: https://github.com/td-berlin/mongoid_cleaner "MongoidCleaner with drop and truncation strategy"
 [RSpec]: http://rspec.info "Behaviour Driven Development for Ruby"
