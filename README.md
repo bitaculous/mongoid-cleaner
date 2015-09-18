@@ -78,7 +78,7 @@ and submit new problems [here].
 Credits
 -------
 
-### All credits goes to team of [trommsdorff + drüner, innovation + marketing consultants GmbH] for [MongoidCleaner],
+All credits goes to team of [trommsdorff + drüner, innovation + marketing consultants GmbH] for [MongoidCleaner],
 which this Gem is based on.
 
 License
