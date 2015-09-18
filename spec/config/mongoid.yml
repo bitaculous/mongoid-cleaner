@@ -1,0 +1,19 @@
+test:
+  # Configure available database clients (required).
+  clients:
+    # Defines the default client (required).
+    default:
+      # Defines the name of the default database that Mongoid can connect to (required).
+      database: mongoid_cleaner_test
+
+      # Provides the hosts the default client can connect to. Must be an array of `host:port` pairs (required).
+      hosts:
+        - localhost:27017
+      options:
+        # Change the default read preference. Valid options for mode are: `:primary`, `:primary_preferred`, `:secondary`,
+        # `:secondary_preferred` or `:nearest` (default: `:primary`).
+        read:
+          mode: :primary
+
+        # The maximum number of connections in the connection pool (default: `5`).
+        max_pool_size: 1

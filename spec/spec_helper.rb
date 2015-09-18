@@ -13,6 +13,11 @@
 # See <http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration> for more information.
 
 RSpec.configure do |config|
+  # Purge MongoDB database after each run.
+  config.after :each do
+    Mongoid::Config.purge!
+  end
+
   # These two settings work together to allow you to limit a spec run to individual examples or groups you care about by
   # tagging them with `:focus` metadata. When nothing is tagged with `:focus`, all examples get run.
   config.filter_run :focus

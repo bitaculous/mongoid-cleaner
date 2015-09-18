@@ -15,6 +15,10 @@ group :test do
 
   gem 'rubocop',       '~> 0.34.1', require: false
   gem 'rubocop-rspec', '~> 1.3.1',  require: false
+
+  # --- Ooops! ---
+
+  gem 'pry-byebug', '~> 3.2.0', require: false
 end
 
 group :misc do
