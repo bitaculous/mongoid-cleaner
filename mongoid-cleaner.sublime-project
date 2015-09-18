@@ -1,0 +1,16 @@
+{
+  "folders": [
+    {
+      "name": "mongoid-cleaner",
+      "path": "./",
+      "folder_exclude_patterns": [
+        ".bundle",
+        "pkg",
+        "tmp"
+      ],
+      "file_exclude_patterns": [
+        ".keep"
+      ]
+    }
+  ]
+}
