@@ -28,6 +28,7 @@ Mongoid::Cleaner.clean
 
 Mongoid::Cleaner.strategy = 'truncate', { except: %w(users) }
 Mongoid::Cleaner.clean
+```
 
 With [Rspec]:
 
