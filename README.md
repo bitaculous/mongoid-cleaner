@@ -40,11 +40,11 @@ With [Rspec]:
 
 ```ruby
 RSpec.configure do |config|
-  config.before(:suite) do
+  config.before :suite do
     Mongoid::Cleaner.strategy = :drop
   end
 
-  config.around(:each) do |example|
+  config.around :each do |example|
     Mongoid::Cleaner.cleaning do
       example.run
     end
