@@ -1,6 +1,7 @@
 Unreleased
 ==========
 
+* [➠] Updated Travis CI configuration, use MongoDB version `3.0.7`
 * [➠] Updated Gems
 
 1.0.0
