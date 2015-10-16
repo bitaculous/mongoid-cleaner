@@ -1,12 +1,7 @@
 addons:
   code_climate:
     repo_token: d55b5e765eb89662262292b937eea93bf43988fa2f2b51c9f72171f2cea853bb
-before_install:
-  # Support for MongoDB 3.x
-  - wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.7.tgz -O /tmp/mongodb.tgz
-  - tar -xvf /tmp/mongodb.tgz
-  - mkdir /tmp/data
-  - ${PWD}/mongodb-linux-x86_64-3.0.7/bin/mongod --dbpath /tmp/data --bind_ip 127.0.0.1 --noauth &> /dev/null &
+before_script: ./resources/travis/scripts/mongodb.sh
 branches:
   except:
     - gh-pages
