@@ -1,7 +1,7 @@
 addons:
   code_climate:
     repo_token: d55b5e765eb89662262292b937eea93bf43988fa2f2b51c9f72171f2cea853bb
-before_script: ./resources/travis/scripts/mongodb.sh
+before_script: ./resources/travis/setup.sh
 branches:
   except:
     - gh-pages
