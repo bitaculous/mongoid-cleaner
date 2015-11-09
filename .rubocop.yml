@@ -9,7 +9,7 @@ require: rubocop-rspec
 # =============
 
 Style/AsciiComments:
-  Description: 'Use only ascii symbols in comments.'
+  Description: 'Use only ASCII symbols in comments.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#english-comments'
   Enabled: false
 

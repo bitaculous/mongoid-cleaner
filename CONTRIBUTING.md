@@ -7,7 +7,7 @@ Making a pull request
 If you'd like to submit a pull request please adhere to the following:
 
 1. Your code *must* be tested. Please TDD your code!
-2. 120 characters code width
+2. 120 characters code width with 10 characters as buffer
 3. Two-spaces instead of tabs
 4. Single-quotes instead of double-quotes unless you are using string interpolation or escapes
 5. No single-character variables
