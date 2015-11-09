@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -62,11 +62,11 @@
 <p>With <a href="http://rspec.info" title="Behaviour Driven Development for Ruby">Rspec</a>:</p>
 
 <div class="highlight highlight-source-ruby"><pre><span class="pl-c1">RSpec</span>.configure <span class="pl-k">do </span>|<span class="pl-smi">config</span>|
-  config.before(<span class="pl-c1">:suite</span>) <span class="pl-k">do</span>
+  config.before <span class="pl-c1">:suite</span> <span class="pl-k">do</span>
     <span class="pl-c1">Mongoid</span>::<span class="pl-c1">Cleaner</span>.strategy <span class="pl-k">=</span> <span class="pl-c1">:drop</span>
   <span class="pl-k">end</span>
 
-  config.around(<span class="pl-c1">:each</span>) <span class="pl-k">do </span>|<span class="pl-smi">example</span>|
+  config.around <span class="pl-c1">:each</span> <span class="pl-k">do </span>|<span class="pl-smi">example</span>|
     <span class="pl-c1">Mongoid</span>::<span class="pl-c1">Cleaner</span>.cleaning <span class="pl-k">do</span>
       example.run
     <span class="pl-k">end</span>
