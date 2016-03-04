@@ -1,3 +1,8 @@
+Unreleased
+==========
+
+* [➠] Updated Mongoid version in dependency (@d4rk5eed)
+
 1.0.2
 =====
 
