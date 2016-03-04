@@ -1,3 +1,3 @@
 --backtrace
 --color
---require cleaner_helper
+--require mongoid_cleaner_helper
