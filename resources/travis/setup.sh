@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-MONGODB_VERSION='3.0.7'
+MONGODB_VERSION='3.2.3'
 
 set -ev
 
