@@ -6,26 +6,32 @@ source 'https://rubygems.org'
 # dependencies, and development dependencies will be added by default to the `:development` group.
 gemspec
 
+# === Development ===
+
 group :development do
   gem 'guard-rspec', '~> 4.6.4', require: false
 end
 
+# === Test ===
+
 group :test do
   # --- Code Analysis ---
 
-  gem 'rubocop',       '~> 0.35.0', require: false
-  gem 'rubocop-rspec', '~> 1.3.1',  require: false
+  gem 'rubocop',       '~> 0.37.2', require: false
+  gem 'rubocop-rspec', '~> 1.4.0',  require: false
 
   # --- Code Coverage ---
 
-  gem 'simplecov', '~> 0.10.0', require: false
+  gem 'simplecov', '~> 0.11.2', require: false
 
   gem 'codeclimate-test-reporter', '~> 0.4.8', require: false
 
   # --- Ooops! ---
 
-  gem 'pry-byebug', '~> 3.2.0', require: false
+  gem 'pry-byebug', '~> 3.3.0', require: false
 end
+
+# === Misc ===
 
 group :misc do
   # --- Formatter ---
@@ -36,5 +42,5 @@ group :misc do
 
   gem 'growl', '~> 1.0.3', require: RUBY_PLATFORM.include?('darwin') && 'growl'
 
-  gem 'rb-fsevent', '~> 0.9.6', require: RUBY_PLATFORM.include?('darwin') && 'rb-fsevent'
+  gem 'rb-fsevent', '~> 0.9.7', require: RUBY_PLATFORM.include?('darwin') && 'rb-fsevent'
 end

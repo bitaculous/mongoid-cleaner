@@ -1,6 +1,7 @@
 Unreleased
 ==========
 
+* [➠] Updated Gems, RuboCop is happy again
 * [➠] Updated Mongoid version in dependency (@d4rk5eed)
 
 1.0.2

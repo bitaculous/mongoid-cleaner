@@ -15,11 +15,9 @@ module Mongoid
         strategy = options.flatten.shift.to_s
         @options = options.flatten.last if options.flatten.last.is_a? Hash
 
-        if available_strategies.include? strategy
-          @strategy = strategy
-        else
-          fail UnknownStrategyError
-        end
+        raise UnknownStrategyError unless available_strategies.include? strategy
+
+        @strategy = strategy
       end
 
       def client
