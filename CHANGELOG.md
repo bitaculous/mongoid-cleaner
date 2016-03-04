@@ -1,6 +1,10 @@
-Unreleased
-==========
+1.1.0
+=====
 
+* [➠] Updated Gemspec
+* [➠] Better naming / shuffled things around
+* [➠] Updated RuboCop configuration
+* [➠] Moved Rake tasks out of library
 * [➠] Updated Gems, RuboCop is happy again
 * [➠] Updated Mongoid version in dependency (@d4rk5eed)
 
